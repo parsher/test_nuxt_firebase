@@ -30,7 +30,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/moment'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -45,7 +45,8 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'vuetify-dialog/nuxt'
   ],
   /*
    ** Axios module configuration

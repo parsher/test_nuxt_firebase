@@ -9,6 +9,8 @@
     <v-card-actions>
       <v-btn color="success" @click.prevent="test">button</v-btn>
       <v-btn color="success" @click.prevent="hello">hello</v-btn>
+      <v-btn color="success" @click.prevent="testMoment">moment</v-btn>
+      <v-btn color="success" @click.prevent="dialog">dialog</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -28,6 +30,16 @@ export default {
     async hello() {
       const r = await this.$axios.get('/api/hello')
       this.text = r.data
+    },
+    testMoment() {
+      this.text = this.$moment().toLocaleString()
+    },
+    async dialog() {
+      const res = await this.$dialog.confirm({
+        text: 'Do you really want to exit?',
+        title: 'Warning'
+      })
+      this.text = res
     }
   }
 }
